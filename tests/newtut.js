@@ -56,4 +56,23 @@ describe('newtut', () => {
     console.log("Your Transaction Signature:- ", "https://explorer.solana.com/tx/"+tx+"?cluster=devnet");
 
   });
+
+  it("Can call the increment instruction",  async ()=>{
+
+    const myAccount = anchor.web3.Keypair.generate();
+    const program = anchor.workspace.Newtut;
+    const tx = await program.rpc.increament({
+      accounts: {
+        increamentAccount: myAccount.publicKey,
+        payeruser: provider.wallet.publicKey,
+        systemProgram: SystemProgram.programId,
+      },
+       signers: [myAccount],
+    });
+    const varb = await program.account.increment.fetch(myAccount.publicKey);
+    assert.ok(varb.number== 1);
+
+    console.log("Your Transaction Signature:- ", "https://explorer.solana.com/tx/"+tx+"?cluster=devnet");
+
+  });
 });

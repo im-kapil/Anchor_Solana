@@ -1,5 +1,5 @@
 [programs.devnet]
-newtut = "6YUugx7sa32WL8jDZXYR2G7MCrMrNVCyyepbfiinbFXm"
+newtut = "5n1fP65uWvoLpmWfzbGgpyD5kVX3mnVfJgBfy5NzdEbn"
 
 
 [registry]
@@ -7,7 +7,7 @@ url = "https://anchor.projectserum.com"
 
 [provider]
 cluster = "devnet"
-wallet = "/home/imentus/.config/solana/id.json"
+wallet = "/home/kapil/.config/solana/id.json"
 
 [scripts]
 test = "yarn run mocha -t 1000000 tests/"
